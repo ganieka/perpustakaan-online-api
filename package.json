@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "serve": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "abbrev": "^1.1.1",
     "abort-controller": "^3.0.0",
@@ -38,6 +46,7 @@
     "define-properties": "^1.2.1",
     "depd": "^2.0.0",
     "destroy": "^1.2.0",
+    "dotenv": "^16.4.5",
     "ecdsa-sig-formatter": "^1.0.11",
     "ee-first": "^1.1.1",
     "encodeurl": "^1.0.2",
@@ -123,6 +132,7 @@
     "minimatch": "^3.1.2",
     "ms": "^2.0.0",
     "mssql": "^10.0.2",
+    "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1",
     "native-duplexpair": "^1.0.0",
     "negotiator": "^0.6.3",
@@ -191,13 +201,5 @@
     "which-boxed-primitive": "^1.0.2",
     "which-typed-array": "^1.1.14",
     "yallist": "^4.0.0"
-  },
-  "scripts": {
-    "start": "node app.js",
-    "serve": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }

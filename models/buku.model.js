@@ -1,8 +1,18 @@
 const pool = require('../db');
 
-// Example model function to get all books
 function getAllBooks(callback) {
-  pool.query('SELECT * FROM buku', (error, results) => {
+  var query = "SELECT * FROM buku"
+  pool.query(query, (error, results) => {
+    if (error) {
+      return callback(error);
+    }
+    return callback(null, results);
+  });
+}
+
+function getHighestRating(callback) {
+  var query = "SELECT * FROM buku order by rating desc limit 1"
+  pool.query(query, (error, results) => {
     if (error) {
       return callback(error);
     }
@@ -11,5 +21,6 @@ function getAllBooks(callback) {
 }
 
 module.exports = {
-  getAllBooks
+  getAllBooks,
+  getHighestRating
 };
