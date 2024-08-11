@@ -18,6 +18,7 @@ const imageRoutes = require('./routes/image.routes');
 app.get('/api/kategori', kategoriController.getAllCategories);
 app.get('/api/buku', bukuController.getAllBooks);
 app.get('/api/buku/highest-rating', bukuController.getHighestRating);
+app.post('/api/buku/filter', bukuController.getBooksByFilter);
 
 app.use('/api/image', imageRoutes);
 // Start server

@@ -20,7 +20,27 @@ function getHighestRating(callback) {
   });
 }
 
+function getBooksByFilter(data, callback) {
+  console.log(data)
+  var query = `
+    SELECT * 
+      FROM buku
+    where 
+      kategori_id in (
+        SELECT id FROM kategori where nama like '%${data.kategori}%'
+      )
+      and nama like '%${data.nama}%'
+  `
+  pool.query(query, (error, results) => {
+    if (error) {
+      return callback(error);
+    }
+    return callback(null, results);
+  });
+}
+
 module.exports = {
   getAllBooks,
-  getHighestRating
+  getHighestRating,
+  getBooksByFilter
 };

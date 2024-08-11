@@ -18,7 +18,7 @@ const getImageBase64 = (req, res) => {
   const mimeType = req.file.mimetype;
   const base64Image = bufferToBase64(req.file.buffer, mimeType);
 
-  res.json({ base64Image });
+  res.send(base64Image);
 };
 
 // Middleware to handle file upload
