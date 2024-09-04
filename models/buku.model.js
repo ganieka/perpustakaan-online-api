@@ -39,8 +39,25 @@ function getBooksByFilter(data, callback) {
   });
 }
 
+function getBooksById(data, callback) {
+  console.log(data)
+  var query = `
+    SELECT * 
+      FROM buku
+    where 
+      id = ${data.id}
+  `
+  pool.query(query, (error, results) => {
+    if (error) {
+      return callback(error);
+    }
+    return callback(null, results);
+  });
+}
+
 module.exports = {
   getAllBooks,
   getHighestRating,
-  getBooksByFilter
+  getBooksByFilter,
+  getBooksById
 };
