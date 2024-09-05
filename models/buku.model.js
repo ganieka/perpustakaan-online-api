@@ -42,10 +42,11 @@ function getBooksByFilter(data, callback) {
 function getBooksById(data, callback) {
   console.log(data)
   var query = `
-    SELECT * 
-      FROM buku
+    SELECT b.*, k.nama as kategori
+      FROM buku b
+      inner join kategori k on b.kategori_id = k.id
     where 
-      id = ${data.id}
+      b.id = ${data.id}
   `
   pool.query(query, (error, results) => {
     if (error) {
