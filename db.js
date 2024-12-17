@@ -1,8 +1,7 @@
 const mysql = require('mysql');
 
-// Create a connection pool
 const pool = mysql.createPool({
-  connectionLimit: 10, // Adjust as per your requirement
+  connectionLimit: 10, 
   host: 'localhost',
   port: 3306,
   user: 'root',
@@ -10,5 +9,4 @@ const pool = mysql.createPool({
   database: 'perpustakaan'
 });
 
-// Export the pool so it can be used in other modules
 module.exports = pool;

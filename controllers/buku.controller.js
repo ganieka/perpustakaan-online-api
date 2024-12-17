@@ -38,7 +38,7 @@ function getBooksByFilter(req, res) {
 }
 
 function getBooksById(req, res) {
-  console.log('Received request to fetch all books');
+  console.log('Received request to fetch book');
   const data = req.body;
   Buku.getBooksById(data, (error, results) => {
     if (error) {

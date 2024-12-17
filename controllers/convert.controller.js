@@ -12,6 +12,7 @@ const bufferToBase64 = (buffer, mimeType) => {
 
 // Controller function to handle file upload and convert to base64
 const getImageBase64 = (req, res) => {
+  // res.header('Content-Type', "multipart/form-data")
   if (!req.file) {
     return res.status(400).json({ error: 'No file uploaded' });
   }
